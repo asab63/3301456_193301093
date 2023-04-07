@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -7,9 +8,12 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Title'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: Text('Giriş Yap', style : Theme.of(context).textTheme.bodyLarge),
       ),
-      body: Container(child: Text("Login"),),
+      body: Container(child: Text(".."),),
     );
   }
 }
