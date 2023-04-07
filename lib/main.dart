@@ -1,3 +1,5 @@
+import 'package:ahmet_usta/core/constant/color.dart';
+import 'package:ahmet_usta/routes.dart';
 import 'package:ahmet_usta/view/screen/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,9 +18,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: const TextTheme(
+          displayLarge:  TextStyle(
+                fontWeight: FontWeight.bold,fontSize: 30, color : AppColor.black)  ,
+          bodyLarge:  TextStyle(
+            fontSize: 17,
+            height: 2,
+            color: AppColor.gray),
+        ),
         primarySwatch: Colors.blue,
       ),
       home: const OnBoarding(),
+      routes: routes,
     );
   }
 }

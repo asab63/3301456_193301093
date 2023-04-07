@@ -20,13 +20,13 @@ class CostumSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                const SizedBox(height: 90),
                 Image.asset(
                   onBoardingList[i].image!,
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.fill,), 
+                width: 250,
+                height: 250,
+                fit: BoxFit.fill,
+                  ), 
                 const SizedBox(height: 40),
                 Text(onBoardingList[i].title!,
-                style : const TextStyle(
-                fontWeight: FontWeight.bold,fontSize: 30)),
+                style : Theme.of(context).textTheme.displayLarge),
                const SizedBox(height: 30),
                 Container(
                   width: double.infinity,
@@ -34,7 +34,7 @@ class CostumSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                   child:Text(
                     onBoardingList[i].body!,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 17,height: 2, color: AppColor.gray)
+                    style: Theme.of(context).textTheme.bodyLarge
                     ),
                 )
               ],
