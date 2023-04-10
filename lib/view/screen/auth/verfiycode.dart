@@ -6,6 +6,8 @@ import 'package:ahmet_usta/view/widget/auth/customtextformauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:otp_text_field/otp_text_field.dart';
+import 'package:otp_text_field/style.dart';
 
 class VerfiyCode extends StatelessWidget {
   const VerfiyCode({super.key});
@@ -33,16 +35,17 @@ class VerfiyCode extends StatelessWidget {
               const CustomTextBodyAuth(
                   text: "lütfen e-postanıza gönderilen rakam kodunu girin"),
               const SizedBox(height: 40),
-              CustomTextFormAuth(
-                mycontroller: controller.email,
-                hintText: "E-postanızı giriniz",
-                labeltext: "Email",
-                iconData: Icons.email_outlined,
-                //mycontroller: mycontroller
+              OTPTextField(
+                length: 5,
+                width: MediaQuery.of(context).size.width,
+                fieldWidth: 40,
+                style: const TextStyle(fontSize: 17),
+                textFieldAlignment: MainAxisAlignment.spaceAround,
+                fieldStyle: FieldStyle.underline,
+                onCompleted: (pin) {
+                  print("Completed: " + pin);
+                },
               ),
-              const SizedBox(height: 25),
-              CustomButtonAuth(text: "kontrol et", onPressed: () {}),
-              const SizedBox(height: 30),
             ],
           )),
     );
