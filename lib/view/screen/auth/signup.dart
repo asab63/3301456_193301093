@@ -1,70 +1,76 @@
-import 'package:ahmet_usta/controller/login_controller.dart';
+import 'package:ahmet_usta/controller/signup_controller.dart';
 import 'package:ahmet_usta/core/constant/color.dart';
 import 'package:ahmet_usta/view/screen/auth/textaslink.dart';
 import 'package:ahmet_usta/view/widget/auth/custombuttonauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextbodyauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextformauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtexttitleauth.dart';
-import 'package:ahmet_usta/view/widget/auth/logoauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+    SignupControllerImp controller = Get.put(SignupControllerImp());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0.0,
-        title: Text('Giriş Yap', style: Theme.of(context).textTheme.bodyLarge),
+        title: Text('ÜYE OL', style: Theme.of(context).textTheme.bodyLarge),
       ),
       body: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: ListView(
             children: [
-              const LogoAuth(),
               const SizedBox(height: 25),
               const CustomTextTitleAuth(text: "HOŞGELDİNİZ"),
               const SizedBox(height: 20),
               const CustomTextBodyAuth(
-                  text: "E-Postanız Ve Şifrenizle Giriş Yapın"),
-              const SizedBox(height: 50),
+                  text: "E-Postanız Ve Şifrenizle Hesap Oluşturun"),
+              const SizedBox(height: 40),
               CustomTextFormAuth(
+                mycontroller: controller.username,
+                hintText: "Kullanıcı adınızı giriniz",
+                labeltext: "Kullanıcı adı",
+                iconData: Icons.person_outlined,
+                //mycontroller: mycontroller
+              ),
+              const SizedBox(height: 25),
+              CustomTextFormAuth(
+                mycontroller: controller.email,
                 hintText: "E-postanızı giriniz",
                 labeltext: "Email",
                 iconData: Icons.email_outlined,
-                mycontroller: controller.email,
+                //mycontroller: mycontroller
               ),
               const SizedBox(height: 25),
               CustomTextFormAuth(
+                mycontroller: controller.phone,
+                hintText: "Telefon numaranızı giriniz",
+                labeltext: "Telefon",
+                iconData: Icons.phone_android_outlined,
+                //mycontroller: mycontroller
+              ),
+              const SizedBox(height: 25),
+              CustomTextFormAuth(
+                mycontroller: controller.password,
                 hintText: "Şifrenizi giriniz",
                 labeltext: "Şifre",
                 iconData: Icons.lock_outlined,
-                mycontroller: controller.password,
+                //mycontroller: mycontroller
               ),
               const SizedBox(height: 25),
-              InkWell(
-                onTap: () {
-                  controller.goToForgetPassword();
-                },
-                child: const Text(
-                  "Şifremi Unuttum",
-                  textAlign: TextAlign.end,
-                  style: TextStyle(color: AppColor.gray, fontSize: 13),
-                ),
-              ),
-              CustomButtonAuth(text: "GİRİŞ YAP", onPressed: () {}),
+              CustomButtonAuth(text: "ÜYE OL", onPressed: () {}),
               const SizedBox(height: 30),
               TextAsLink(
-                textone: "Hesabın yok mu?",
-                texttwo: "ÜYE OL",
+                textone: "Hesabın var mı?",
+                texttwo: " GİRİŞ YAP",
                 onTap: () {
-                  controller.goToSignup();
+                  controller.goTologin();
                 },
               )
             ],

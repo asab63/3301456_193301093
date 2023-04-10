@@ -10,6 +10,5 @@ class CustomTextTitleAuth extends StatelessWidget {
       text,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.displayMedium);
-          const SizedBox(height: 20);
   }
 }
