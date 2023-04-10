@@ -20,7 +20,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: const TextTheme(
           displayLarge:  TextStyle(
-                fontWeight: FontWeight.bold,fontSize: 30, color : AppColor.black)  ,
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color : AppColor.black),
+            displayMedium:  TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+                color : AppColor.black),
           bodyLarge:  TextStyle(
             fontSize: 17,
             height: 2,
