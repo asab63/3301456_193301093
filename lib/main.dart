@@ -19,18 +19,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: const TextTheme(
-          displayLarge:  TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color : AppColor.black),
-            displayMedium:  TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color : AppColor.black),
-          bodyLarge:  TextStyle(
-            fontSize: 17,
-            height: 2,
-            color: AppColor.gray),
+          displayLarge: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 30, color: AppColor.black),
+          displayMedium: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 30, color: AppColor.black),
+          bodyLarge: TextStyle(fontSize: 17, height: 2, color: AppColor.gray),
+          titleLarge: TextStyle(color: Colors.white),
         ),
         primarySwatch: Colors.blue,
       ),

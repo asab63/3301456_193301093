@@ -1,4 +1,5 @@
 import 'package:ahmet_usta/controller/forgetpassword_controller.dart';
+import 'package:ahmet_usta/core/constant/color.dart';
 import 'package:ahmet_usta/view/widget/auth/custombuttonauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextbodyauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextformauth.dart';
@@ -17,10 +18,10 @@ class ForgetPassword extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.primaryColor,
         elevation: 0.0,
         title: Text('Şifremi Unuttum',
-            style: Theme.of(context).textTheme.bodyLarge),
+            style: Theme.of(context).textTheme.titleLarge),
       ),
       body: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),

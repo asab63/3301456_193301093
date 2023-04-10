@@ -19,9 +19,10 @@ class Login extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.primaryColor,
         elevation: 0.0,
-        title: Text('Giriş Yap', style: Theme.of(context).textTheme.bodyLarge),
+        title: Text('Giriş Yap', style: Theme.of(context).textTheme.titleLarge),
+    
       ),
       body: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
