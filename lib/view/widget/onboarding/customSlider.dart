@@ -1,5 +1,4 @@
 import 'package:ahmet_usta/controller/onboarding_controller.dart';
-import 'package:ahmet_usta/core/constant/color.dart';
 import 'package:ahmet_usta/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,14 +16,14 @@ class CostumSliderOnBoarding extends GetView<OnBoardingControllerImp> {
             itemCount: onBoardingList.length,
             itemBuilder: (context , i) => Column( 
               children: [ 
-               const SizedBox(height: 90),
+               const SizedBox(height: 50),
                 Image.asset(
                   onBoardingList[i].image!,
                 width: 250,
                 height: 250,
                 fit: BoxFit.fill,
                   ), 
-                const SizedBox(height: 40),
+                const SizedBox(height: 34),
                 Text(onBoardingList[i].title!,
                 style : Theme.of(context).textTheme.displayLarge),
                const SizedBox(height: 30),

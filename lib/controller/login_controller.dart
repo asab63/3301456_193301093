@@ -11,6 +11,13 @@ abstract class LoginController extends GetxController {
 class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
+
+  bool isshowpassword = true;
+
+  showPassword (){
+    isshowpassword = isshowpassword == true ? false :true;
+    update();
+  }
   @override
   login() {}
 

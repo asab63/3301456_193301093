@@ -1,5 +1,6 @@
 import 'package:ahmet_usta/controller/signup_controller.dart';
 import 'package:ahmet_usta/core/constant/color.dart';
+import 'package:ahmet_usta/core/functions/exitappalert.dart';
 import 'package:ahmet_usta/view/screen/auth/textaslink.dart';
 import 'package:ahmet_usta/view/widget/auth/custombuttonauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextbodyauth.dart';
@@ -22,7 +23,9 @@ class SignUp extends StatelessWidget {
         elevation: 0.0,
         title: Text('ÜYE OL', style: Theme.of(context).textTheme.titleLarge),
       ),
-      body: Container(
+      body:  WillPopScope( //exit button icin
+        onWillPop: alerExitApp,
+       child: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: ListView(
             children: [
@@ -74,7 +77,7 @@ class SignUp extends StatelessWidget {
                 },
               )
             ],
-          )),
+          ))),
     );
   }
 }

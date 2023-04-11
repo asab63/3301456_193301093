@@ -5,17 +5,21 @@ class CustomTextFormAuth extends StatelessWidget {
   final String labeltext;
   final IconData iconData;
   final TextEditingController? mycontroller;
+  final bool? obscureText;
+  final Function()? onTapIcon;
   const CustomTextFormAuth(
       {super.key,
       required this.hintText,
       required this.labeltext,
       required this.iconData,
-      required this.mycontroller});
+      required this.mycontroller,
+       this.obscureText, this.onTapIcon});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: mycontroller,
+      obscureText: obscureText == null || obscureText == false ? false : true,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(fontSize: 14),
@@ -25,7 +29,7 @@ class CustomTextFormAuth extends StatelessWidget {
         label: Container(
             margin: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(labeltext)),
-        suffixIcon: Icon(iconData),
+        suffixIcon: InkWell(child: Icon(iconData),onTap: onTapIcon),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30) //karenin koseleri icin
             ),
