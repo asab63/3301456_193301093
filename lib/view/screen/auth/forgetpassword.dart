@@ -35,6 +35,7 @@ class ForgetPassword extends StatelessWidget {
                       "Doğrulama kodunu almak için lütfen e-posta adresinizi yazınız"),
               const SizedBox(height: 40),
               CustomTextFormAuth(
+                valid: (val){},
                 mycontroller: controller.email,
                 hintText: "E-postanızı giriniz",
                 labeltext: "Email",

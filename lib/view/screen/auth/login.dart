@@ -1,6 +1,7 @@
 import 'package:ahmet_usta/controller/login_controller.dart';
 import 'package:ahmet_usta/core/constant/color.dart';
 import 'package:ahmet_usta/core/functions/exitappalert.dart';
+import 'package:ahmet_usta/core/functions/validinput.dart';
 import 'package:ahmet_usta/view/screen/auth/textaslink.dart';
 import 'package:ahmet_usta/view/widget/auth/custombuttonauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextbodyauth.dart';
@@ -30,55 +31,68 @@ class Login extends StatelessWidget {
           onWillPop: alerExitApp,
           child: Container(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-              child: ListView(
-                children: [
-                  const LogoAuth(),
-                  const SizedBox(height: 25),
-                  const CustomTextTitleAuth(text: "HOŞGELDİNİZ"),
-                  const SizedBox(height: 20),
-                  const CustomTextBodyAuth(
-                      text: "E-Postanız Ve Şifrenizle Giriş Yapın"),
-                  const SizedBox(height: 50),
-                  CustomTextFormAuth(
-                    hintText: "E-postanızı giriniz",
-                    labeltext: "Email",
-                    iconData: Icons.email_outlined,
-                    mycontroller: controller.email,
-                  ),
-                  const SizedBox(height: 25),
-                  GetBuilder<LoginControllerImp>(
-                    builder: (controller) => CustomTextFormAuth(
-                      obscureText: controller.isshowpassword,
-                      onTapIcon: () {
-                        controller.showPassword();
+              child: Form(
+                key: controller.formstate,
+                child: ListView(
+                  children: [
+                    const LogoAuth(),
+                    const SizedBox(height: 25),
+                    const CustomTextTitleAuth(text: "HOŞGELDİNİZ"),
+                    const SizedBox(height: 20),
+                    const CustomTextBodyAuth(
+                        text: "E-Postanız Ve Şifrenizle Giriş Yapın"),
+                    const SizedBox(height: 50),
+                    CustomTextFormAuth(
+                      valid: (val) {
+                        return validInput(val!, 5, 100, "email");
                       },
-                      hintText: "Şifrenizi giriniz",
-                      labeltext: "Şifre",
-                      iconData: Icons.lock_outlined,
-                      mycontroller: controller.password,
+                      hintText: "E-postanızı giriniz",
+                      labeltext: "Email",
+                      iconData: Icons.email_outlined,
+                      mycontroller: controller.email,
                     ),
-                  ),
-                  const SizedBox(height: 25),
-                  InkWell(
-                    onTap: () {
-                      controller.goToForgetPassword();
-                    },
-                    child: const Text(
-                      "Şifremi Unuttum",
-                      textAlign: TextAlign.end,
-                      style: TextStyle(color: AppColor.gray, fontSize: 13),
+                    const SizedBox(height: 25),
+                    GetBuilder<LoginControllerImp>(
+                      builder: (controller) => CustomTextFormAuth(
+                        valid: (val) {
+                          return validInput(val!, 5, 30, "password");
+                        },
+                        obscureText: controller.isshowpassword,
+                        onTapIcon: () {
+                          controller.showPassword();
+                        },
+                        hintText: "Şifrenizi giriniz",
+                        labeltext: "Şifre",
+                        iconData: Icons.lock_outlined,
+                        mycontroller: controller.password,
+                      ),
                     ),
-                  ),
-                  CustomButtonAuth(text: "GİRİŞ YAP", onPressed: () {}),
-                  const SizedBox(height: 30),
-                  TextAsLink(
-                    textone: "Hesabın yok mu?",
-                    texttwo: "ÜYE OL",
-                    onTap: () {
-                      controller.goToSignup();
-                    },
-                  )
-                ],
+                    const SizedBox(height: 25),
+                    InkWell(
+                      onTap: () {
+                        controller.goToForgetPassword();
+                      },
+                      child: const Text(
+                        "Şifremi Unuttum",
+                        textAlign: TextAlign.end,
+                        style: TextStyle(color: AppColor.gray, fontSize: 13),
+                      ),
+                    ),
+                    CustomButtonAuth(
+                        text: "GİRİŞ YAP",
+                        onPressed: () {
+                          controller.login();
+                        }),
+                    const SizedBox(height: 30),
+                    TextAsLink(
+                      textone: "Hesabın yok mu?",
+                      texttwo: "ÜYE OL",
+                      onTap: () {
+                        controller.goToSignup();
+                      },
+                    )
+                  ],
+                ),
               )),
         ));
   }

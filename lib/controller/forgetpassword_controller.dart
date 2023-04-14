@@ -15,11 +15,11 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
 
   @override
   goToVerfiyCode() {
-    Get.offNamed(AppRoute.verfiyCode);
+    Get.toNamed(AppRoute.verfiyCode);
   }
 
   @override
-  goToAnasCode() {
+  goToAnasCode() { //edit this name
     Get.offNamed(AppRoute.login);
   }
 

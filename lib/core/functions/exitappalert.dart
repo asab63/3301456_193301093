@@ -9,16 +9,21 @@ Future<bool> alerExitApp() {
       middleText: "Uygulamadan çıkmak istiyor musunuz?",
       actions: [
         ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: AppColor.primaryColor, // Background color
+            ),
             onPressed: () {
               exit(0);
             },
-            child: const Text("EVET", style: TextStyle(color: AppColor.black))),
+            child: const Text("EVET")),
         ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: AppColor.gray, // Background color
+            ),
             onPressed: () {
               Get.back();
             },
-            child: const Text("HAYIR",
-                style: TextStyle(color: AppColor.primaryColor))),
+            child: const Text("HAYIR")),
       ]);
   return Future.value(true);
 }

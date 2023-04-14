@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           bodyLarge: TextStyle(fontSize: 17, height: 2, color: AppColor.gray),
           titleLarge: TextStyle(color: Colors.white),
         ),
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
       home: const OnBoarding(),
       routes: routes,
