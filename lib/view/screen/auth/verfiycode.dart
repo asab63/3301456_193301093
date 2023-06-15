@@ -1,8 +1,6 @@
 import 'package:ahmet_usta/controller/forgetpassword_controller.dart';
 import 'package:ahmet_usta/core/constant/color.dart';
-import 'package:ahmet_usta/view/widget/auth/custombuttonauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextbodyauth.dart';
-import 'package:ahmet_usta/view/widget/auth/customtextformauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtexttitleauth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

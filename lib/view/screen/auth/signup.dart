@@ -46,7 +46,6 @@ class SignUp extends StatelessWidget {
                   hintText: "Kullanıcı adınızı giriniz",
                   labeltext: "Kullanıcı adı",
                   iconData: Icons.person_outlined,
-                  //mycontroller: mycontroller
                 ),
                 const SizedBox(height: 25),
                 CustomTextFormAuth(
@@ -57,7 +56,6 @@ class SignUp extends StatelessWidget {
                   hintText: "E-postanızı giriniz",
                   labeltext: "Email",
                   iconData: Icons.email_outlined,
-                  //mycontroller: mycontroller
                 ),
                 const SizedBox(height: 25),
                 CustomTextFormAuth(
@@ -68,7 +66,6 @@ class SignUp extends StatelessWidget {
                   hintText: "Telefon numaranızı giriniz",
                   labeltext: "Telefon",
                   iconData: Icons.phone_android_outlined,
-                  //mycontroller: mycontroller
                 ),
                 const SizedBox(height: 25),
                 CustomTextFormAuth(
@@ -79,7 +76,6 @@ class SignUp extends StatelessWidget {
                   hintText: "Şifrenizi giriniz",
                   labeltext: "Şifre",
                   iconData: Icons.lock_outlined,
-                  //mycontroller: mycontroller
                 ),
                 const SizedBox(height: 25),
                 CustomButtonAuth(text: "ÜYE OL", onPressed: () {

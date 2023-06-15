@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 Future<bool> alerExitApp() {
   Get.defaultDialog(
       title: "Uyarı",
+      titleStyle: TextStyle(color: AppColor.primaryColor),
       middleText: "Uygulamadan çıkmak istiyor musunuz?",
       actions: [
         ElevatedButton(

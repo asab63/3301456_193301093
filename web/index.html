@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>ahmet_usta</title>
+  <title>Ahmet Usta</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -40,6 +40,30 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBtmjxx7aQkLNGk3QoMwirmcptnGp_9JOg",
+      authDomain: "ahmetusta-5025.firebaseapp.com",
+      projectId: "ahmetusta-5025",
+      storageBucket: "ahmetusta-5025.appspot.com",
+      messagingSenderId: "1040923445465",
+      appId: "1:1040923445465:web:e760ce088594eacb3196c8",
+      measurementId: "G-NEVXJVZ6FQ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

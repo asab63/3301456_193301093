@@ -8,12 +8,13 @@ import 'package:ahmet_usta/view/widget/auth/customtextbodyauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtextformauth.dart';
 import 'package:ahmet_usta/view/widget/auth/customtexttitleauth.dart';
 import 'package:ahmet_usta/view/widget/auth/logoauth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     LoginControllerImp controller = Get.put(LoginControllerImp());
@@ -27,7 +28,6 @@ class Login extends StatelessWidget {
               Text('Giriş Yap', style: Theme.of(context).textTheme.titleLarge),
         ),
         body: WillPopScope(
-          //exit button icin
           onWillPop: alerExitApp,
           child: Container(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
@@ -80,9 +80,21 @@ class Login extends StatelessWidget {
                     ),
                     CustomButtonAuth(
                         text: "GİRİŞ YAP",
-                        onPressed: () {
-                          controller.login();
-                        }),
+                        onPressed: () async {
+try {
+  final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: "alaa@gmail.com",
+    password: "alaa12345",
+  );
+} on FirebaseAuthException catch (e) {
+  if (e.code == 'weak-password') {
+    print('The password provided is too weak.');
+  } else if (e.code == 'email-already-in-use') {
+    print('The account already exists for that email.');
+  }
+} catch (e) {
+  print(e);
+}                        }),
                     const SizedBox(height: 30),
                     TextAsLink(
                       textone: "Hesabın yok mu?",

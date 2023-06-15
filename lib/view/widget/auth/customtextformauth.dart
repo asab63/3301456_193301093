@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormAuth extends StatelessWidget {
-  final String hintText; // لانه كل تكست وايكون مختلف عن الاخر
+  final String hintText; 
   final String labeltext;
   final IconData iconData;
   final TextEditingController? mycontroller;
@@ -26,7 +26,7 @@ class CustomTextFormAuth extends StatelessWidget {
         hintText: hintText,
         hintStyle: const TextStyle(fontSize: 14),
         floatingLabelBehavior:
-            FloatingLabelBehavior.always, //email kelimsei sabitliyor
+            FloatingLabelBehavior.always, 
         contentPadding: const EdgeInsets.symmetric(vertical: 5, horizontal: 35),
         label: Container(
             margin: const EdgeInsets.symmetric(horizontal: 10),

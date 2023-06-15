@@ -11,7 +11,7 @@ class CostumSliderOnBoarding extends GetView<OnBoardingControllerImp> {
     return PageView.builder(
       controller: controller.pageController,
       onPageChanged: (val){
-        controller.onPageChabged(val);
+        controller.onPageChanged(val);
       },
             itemCount: onBoardingList.length,
             itemBuilder: (context , i) => Column( 

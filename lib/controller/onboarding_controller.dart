@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 abstract class OnBoardingController extends GetxController {
   next();
-  onPageChabged(int index);
+  onPageChanged(int index);
 }
 class OnBoardingControllerImp extends OnBoardingController {
   late PageController pageController;
@@ -22,7 +22,7 @@ class OnBoardingControllerImp extends OnBoardingController {
   }}
 
   @override
-  onPageChabged(int index) {
+  onPageChanged(int index) {
     currentPage = index ;
     update();
       }

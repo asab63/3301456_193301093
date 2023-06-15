@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1040923445465",
+    "project_id": "ahmetusta-5025",
+    "storage_bucket": "ahmetusta-5025.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040923445465:android:60e176fba1345b0d3196c8",
+        "android_client_info": {
+          "package_name": "at.alaa.ahmetusta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040923445465-5oistbha9h65025rvfbmrmm0pc1j9rgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2Kcp13TtLfGcQU_mPJpjPLo9mJL5obuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040923445465-5oistbha9h65025rvfbmrmm0pc1j9rgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
