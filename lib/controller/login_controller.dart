@@ -1,4 +1,5 @@
 import 'package:ahmet_usta/core/constant/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,16 +16,27 @@ class LoginControllerImp extends LoginController {
 
   bool isshowpassword = true;
 
-  showPassword (){
-    isshowpassword = isshowpassword == true ? false :true;
+  showPassword() {
+    isshowpassword = isshowpassword == true ? false : true;
     update();
   }
+
   @override
-  login() {
+  login() async {
     var formdata = formstate.currentState;
-    if(formdata!.validate()){
-    Get.offNamed(AppRoute.homeScreen);
-    }else {
+    if (formdata!.validate()) {
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            email: email.text, password: password.text);
+        Get.offNamed(AppRoute.homeScreen);
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+          print('No user found for that email.');
+        } else if (e.code == 'wrong-password') {
+          print('Wrong password provided for that user.');
+        }
+      }
+    } else {
       print("geçerli değil");
     }
   }
